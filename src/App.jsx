@@ -45,22 +45,10 @@ const PROJECTS = [
 ]
 
 const SKILLS = [
-  {
-    group: 'Languages',
-    items: ['Python', 'SQL', 'JavaScript', 'Bash'],
-  },
-  {
-    group: 'AI / ML',
-    items: ['PyTorch', 'CNNs', 'Scikit-learn', 'NumPy', 'Pandas'],
-  },
-  {
-    group: 'Remote Sensing',
-    items: ['Sentinel-1 SAR', 'Geospatial Data', 'Sen1Floods11', 'GDAL'],
-  },
-  {
-    group: 'Tools & Infra',
-    items: ['Git', 'GitHub', 'Linux', 'VS Code', 'Jupyter'],
-  },
+  { group: 'Languages', items: ['Python', 'SQL', 'JavaScript', 'Bash'] },
+  { group: 'AI / ML', items: ['PyTorch', 'CNNs', 'Scikit-learn', 'NumPy', 'Pandas'] },
+  { group: 'Remote Sensing', items: ['Sentinel-1 SAR', 'Geospatial Data', 'Sen1Floods11', 'GDAL'] },
+  { group: 'Tools & Infra', items: ['Git', 'GitHub', 'Linux', 'VS Code', 'Jupyter'] },
 ]
 
 export default function App() {
@@ -83,48 +71,32 @@ export default function App() {
 
   return (
     <>
-      {/* NAV */}
       <nav className="nav">
         <div className="nav-logo">GM<span>.</span></div>
         <div className="nav-links">
-          {NAV_LINKS.map(l => (
-            <a key={l} href={`#${l}`}>{l}</a>
-          ))}
+          {NAV_LINKS.map(l => <a key={l} href={`#${l}`}>{l}</a>)}
         </div>
       </nav>
 
-      {/* HERO */}
       <section className="hero">
         <div className="hero-grid" />
         <div className="hero-content">
           <div className="hero-tag">Available for internships · UK visa eligible</div>
-          <h1 className="hero-name">
-            Gaurav<br /><span className="accent">Manju.</span>
-          </h1>
+          <h1 className="hero-name">Gaurav<br /><span className="accent">Manju.</span></h1>
           <p className="hero-tagline">
             MSc Artificial Intelligence student at the University of Leicester —
             building intelligent systems at the intersection of computer vision,
             remote sensing, and software engineering.
           </p>
           <div className="hero-links">
-            <a href="mailto:Gauravsaimeena@gmail.com" className="btn btn-primary">
-              Get in touch →
-            </a>
-            <a href="https://github.com/GauravManju" target="_blank" rel="noreferrer" className="btn btn-outline">
-              GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/gaurav-manju/" target="_blank" rel="noreferrer" className="btn btn-outline">
-              LinkedIn
-            </a>
+            <a href="mailto:Gauravsaimeena@gmail.com" className="btn btn-primary">Get in touch →</a>
+            <a href="https://github.com/GauravManju" target="_blank" rel="noreferrer" className="btn btn-outline">GitHub</a>
+            <a href="https://www.linkedin.com/in/gaurav-manju/" target="_blank" rel="noreferrer" className="btn btn-outline">LinkedIn</a>
           </div>
         </div>
-        <div className="hero-scroll">
-          <div className="scroll-line" />
-          scroll
-        </div>
+        <div className="hero-scroll"><div className="scroll-line" />scroll</div>
       </section>
 
-      {/* ABOUT */}
       <section className="section" id="about" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="section-inner">
           <div {...reveal()}>
@@ -133,22 +105,9 @@ export default function App() {
           </div>
           <div className="about-grid">
             <div className="about-text" {...reveal(1)}>
-              <p>
-                I'm <strong>Gaurav Manju</strong>, an MSc AI student at the
-                <strong> University of Leicester</strong>, UK. My background spans
-                research at <strong>ISRO</strong> and <strong>DRDO</strong>, and
-                industry experience at <strong>Tech Mahindra</strong>.
-              </p>
-              <p>
-                My focus is on applying deep learning to real-world problems —
-                particularly in computer vision, satellite imagery analysis, and
-                building clean, well-engineered software.
-              </p>
-              <p>
-                I'm actively seeking <strong>internship opportunities</strong> in
-                the UK where I can contribute to AI/ML teams and keep growing as
-                an engineer.
-              </p>
+              <p>I'm <strong>Gaurav Manju</strong>, an MSc AI student at the <strong>University of Leicester</strong>, UK. My background spans research at <strong>ISRO</strong> and <strong>DRDO</strong>, and industry experience at <strong>Tech Mahindra</strong>.</p>
+              <p>My focus is on applying deep learning to real-world problems — particularly in computer vision, satellite imagery analysis, and building clean, well-engineered software.</p>
+              <p>I'm actively seeking <strong>internship opportunities</strong> in the UK where I can contribute to AI/ML teams and keep growing as an engineer.</p>
             </div>
             <div className="about-stats" {...reveal(2)}>
               {[
@@ -167,7 +126,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* EXPERIENCE */}
       <section className="section" id="experience" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="section-inner">
           <div {...reveal()}>
@@ -190,7 +148,6 @@ export default function App() {
         </div>
       </section>
 
-      {/* PROJECTS */}
       <section className="section" id="projects" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="section-inner">
           <div {...reveal()}>
@@ -203,19 +160,14 @@ export default function App() {
                 <div className="project-num">{p.num}</div>
                 <div className="project-name">{p.name}</div>
                 <div className="project-desc">{p.desc}</div>
-                <div className="project-tags">
-                  {p.tags.map(t => <span className="tag" key={t}>{t}</span>)}
-                </div>
-                <a href={p.link} target="_blank" rel="noreferrer" className="project-link">
-                  View on GitHub →
-                </a>
+                <div className="project-tags">{p.tags.map(t => <span className="tag" key={t}>{t}</span>)}</div>
+                <a href={p.link} target="_blank" rel="noreferrer" className="project-link">View on GitHub →</a>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* SKILLS */}
       <section className="section" id="skills" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="section-inner">
           <div {...reveal()}>
@@ -228,10 +180,7 @@ export default function App() {
                 <div className="skill-group-title">{g.group}</div>
                 <div className="skill-items">
                   {g.items.map(s => (
-                    <div className="skill-item" key={s}>
-                      <span className="skill-dot" />
-                      {s}
-                    </div>
+                    <div className="skill-item" key={s}><span className="skill-dot" />{s}</div>
                   ))}
                 </div>
               </div>
@@ -240,32 +189,21 @@ export default function App() {
         </div>
       </section>
 
-      {/* CONTACT */}
       <section className="section" id="contact" style={{ borderTop: '1px solid var(--border)' }}>
         <div className="contact-inner">
           <div {...reveal()}>
             <div className="section-label" style={{ textAlign: 'center' }}>05 — Contact</div>
             <h2 className="contact-title">Let's work together.</h2>
-            <p className="contact-sub">
-              I'm currently open to internship opportunities in the UK.
-              If you have a role or just want to chat about AI, feel free to reach out.
-            </p>
+            <p className="contact-sub">I'm currently open to internship opportunities in the UK. If you have a role or just want to chat about AI, feel free to reach out.</p>
             <div className="contact-links">
-              <a href="mailto:Gauravsaimeena@gmail.com" className="btn btn-primary">
-                Gauravsaimeena@gmail.com →
-              </a>
-              <a href="https://www.linkedin.com/in/gaurav-manju/" target="_blank" rel="noreferrer" className="btn btn-outline">
-                LinkedIn
-              </a>
-              <a href="https://github.com/GauravManju" target="_blank" rel="noreferrer" className="btn btn-outline">
-                GitHub
-              </a>
+              <a href="mailto:Gauravsaimeena@gmail.com" className="btn btn-primary">Gauravsaimeena@gmail.com →</a>
+              <a href="https://www.linkedin.com/in/gaurav-manju/" target="_blank" rel="noreferrer" className="btn btn-outline">LinkedIn</a>
+              <a href="https://github.com/GauravManju" target="_blank" rel="noreferrer" className="btn btn-outline">GitHub</a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* FOOTER */}
       <footer className="footer">
         <span>© 2026 Gaurav Manju</span>
         <span style={{ color: 'var(--subtle)' }}>Built with React · Hosted on GitHub Pages</span>
